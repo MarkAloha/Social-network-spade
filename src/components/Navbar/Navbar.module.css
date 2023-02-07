@@ -1,0 +1,37 @@
+
+.word {
+  padding: 70px 0 10px 70px;
+}
+
+a.active {
+  padding: 10px 0px 0px 50px;
+  color: aqua;
+  text-decoration: none;
+}
+
+.nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 300px 1fr;
+  width: 206px;
+  background-color: rgb(255, 153, 153);
+  block-size: 800px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.box {
+  padding-top: 100px;
+  display: grid;
+  max-height: 200px;
+}
+.item {
+  padding: 10px 0px 0px 50px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  /* max-height: 16px; */
+}
+
+a:hover {
+  text-decoration: none;
+}

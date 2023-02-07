@@ -1,0 +1,13 @@
+.header {
+    grid-area: h;
+    background-color: #00ffcc;
+    width: auto ;
+    /* margin-top: 10px; */
+    }
+    
+    .header img{
+      max-width: auto;
+      height: 60px;
+    }
+
+    

@@ -1,0 +1,21 @@
+h3 {
+  display: flex;
+  justify-content: center;
+}
+  
+.foto {
+  width: 100%;
+}
+
+  .content img{
+    width: 100%;
+    max-height: auto;
+  }
+
+  .item {
+    color:rgb(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    font-weight:bold;
+    padding: 10px;
+  }

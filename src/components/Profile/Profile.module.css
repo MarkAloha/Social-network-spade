@@ -1,0 +1,14 @@
+.box {
+  padding: 15px;
+  
+  
+}
+  
+  .content img{
+    max-width: 100%;
+    max-height: auto;
+  }
+
+  .item {
+    color:rgb(0, 0, 0);
+  }
