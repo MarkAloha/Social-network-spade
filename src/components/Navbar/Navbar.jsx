@@ -13,7 +13,7 @@ const Navbar = (props) => {
     <div className={classes.box}>
       {navA}
     </div>
-    <div>
+    <div>   
     <div className={classes.word}>Friends</div>
     <FriendsBar names={props.names} />
     </div>

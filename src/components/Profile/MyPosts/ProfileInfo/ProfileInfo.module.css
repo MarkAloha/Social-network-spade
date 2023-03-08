@@ -1,4 +1,4 @@
-h3 {
+h5 {
   display: flex;
   justify-content: center;
 }
@@ -16,6 +16,5 @@ h3 {
     color:rgb(0, 0, 0);
     display: flex;
     justify-content: center;
-    font-weight:bold;
     padding: 10px;
   }

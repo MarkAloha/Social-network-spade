@@ -1,10 +1,10 @@
 
 .word {
-  padding: 70px 0 10px 70px;
+  padding: 50px 0 10px 50px;
 }
 
 a.active {
-  padding: 10px 0px 0px 50px;
+  padding: 0px 0px 0px 40px;
   color: aqua;
   text-decoration: none;
 }
@@ -13,11 +13,11 @@ a.active {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 300px 1fr;
-  width: 206px;
+  /* width: 160px; */
   background-color: rgb(255, 153, 153);
   block-size: 800px;
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 15px;
+  margin-right: 10px;
 }
 
 .box {
@@ -26,7 +26,7 @@ a.active {
   max-height: 200px;
 }
 .item {
-  padding: 10px 0px 0px 50px;
+  padding: 0px 0px 0px 40px;
   color: rgb(0, 0, 0);
   text-decoration: none;
   /* max-height: 16px; */

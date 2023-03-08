@@ -26,10 +26,9 @@ const App = (props) => {
               element={
                 <Dialogs
                   messages={props.state.dialogs.messages}
-                  names={props.state.dialogs.names}
-                  addMessage={props.addMessage}
-                  newMessageText={props.state.newMessageText}
-                  onMessageChange={props.onMessageChange}
+                  names={props.state.dialogs.names}                  
+                  newMessageText={props.state.dialogs.newMessageText}
+                  dispatch={props.dispatch}
                 />
               }
             />
@@ -37,10 +36,9 @@ const App = (props) => {
               path="/profile"
               element={
                 <Profile
-                  posts={props.state.profile}
-                  addPost={props.addPost}
-                  newPostText={props.state.newPostText}
-                  onPostChange={props.onPostChange}
+                  posts={props.state.profile.wall}
+                  dispatch={props.dispatch} 
+                  textFlex={props.state.profile.newPostText}                                 
                 />
               }
             />

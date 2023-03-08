@@ -1,18 +1,24 @@
+import dialogsReducer from "./dialogs-reducer";
+import profielReducer from "./profile-reducer";
+import sidebarReducer from "./sidebar-reducer";
+
 let rerenderEntireTree = () => {};
 let store = {
   _state: {
-    profile: [
+    profile: {
+      wall: [
       { id: 1, message: "Че как? ", likesCount: "32", age: "21" },
       { id: 2, message: "it's my first post", likesCount: "55", age: "22" },
     ],
-    newPostText: "FLEX",
-    newMessageText: "FLEX",
+    newPostText: "FLEX"},
+
+    
     dialogs: {
       messages: [
         { id: 1, message: "Привет, как дела?" },
         { id: 2, message: "Что делаешь?" },
       ],
-
+      newMessageText: "FLEX",
       names: [
         {
           id: 1,
@@ -59,37 +65,76 @@ let store = {
   getState() {
     return this._state;
   },
-
-  onMessageChange(text) {
-    this._state.newMessageText = text;
-    this._callSubscriber(this._state);
-  },
-  onPostChange(newText) {
-    this._state.newPostText = newText;
-    this._callSubscriber(this._state);
-  },
-  addPost() {
-    let newPost = {
-      id: 3,
-      message: this._state.newPostText,
-      likesCount: 0,
-    };
-    this._state.profile.push(newPost);
-    this._state.newPostText = "";
-    this._callSubscriber(this._state);
-  },
-  addMessage() {
-    let newMessage = {
-      id: 3,
-      message: this._state.newMessageText,
-    };
-    this._state.dialogs.messages.push(newMessage);
-    this._state.newMessageText = "";
-    this._callSubscriber(this._state);
-  },
   subscribe(observer) {
     this._callSubscriber = observer;
   },
+  dispatch(active) {
+    debugger
+    this._state.profile = profielReducer(this._state.profile, active);
+    this._state.dialogs = dialogsReducer (this._state.dialogs, active);
+    this._state.sidebar = sidebarReducer (this._state.sidebar, active);
+
+    this._callSubscriber(this._state);
+
+    
+}
 };
+
+
+
+
+
+// onMessageChange(text) {
+//   this._state.newMessageText = text;
+//   this._callSubscriber(this._state);
+// },
+// onPostChange(newText) {
+//   this._state.newPostText = newText;
+//   this._callSubscriber(this._state);
+// },
+// addPost() {
+//   let newPost = {
+//     id: 3,
+//     message: this._state.newPostText,
+//     likesCount: 0,
+//   };
+//   this._state.profile.push(newPost);
+//   this._state.newPostText = "";
+//   this._callSubscriber(this._state);
+// },
+// addMessage() {
+//   let newMessage = {
+//     id: 3,
+//     message: this._state.newMessageText,
+//   };
+//   this._state.dialogs.messages.push(newMessage);
+//   this._state.newMessageText = "";
+//   this._callSubscriber(this._state);
+// },
+
+// if (active.type === ADD_POST){      
+//   let newPost = {
+//     id: 3,
+//     message: this._state.newPostText,
+//     likesCount: 0,
+//   };
+//   this._state.profile.push(newPost);
+//   this._state.newPostText = "";
+//   this._callSubscriber(this._state);      
+// }  else if (active.type === ADD_MESSAGE){
+// let newMessage = {
+//   id: 3,
+//   message: this._state.newMessageText,
+// };
+// this._state.dialogs.messages.push(newMessage);
+// this._state.newMessageText = "";
+// this._callSubscriber(this._state);
+// }  else if (active.type === ON_POST_CHANGE){
+// this._state.newPostText = active.pText;
+// this._callSubscriber(this._state);
+// } else if (active.type === ON_MESSAGE_CHANGE) {
+// this._state.newMessageText = active.mText;
+// this._callSubscriber(this._state);
+// }
 
 export default store;

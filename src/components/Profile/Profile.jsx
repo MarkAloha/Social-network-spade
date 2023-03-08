@@ -8,7 +8,7 @@ const Profile = (props) => {
     <ProfileInfo />
     <div className={classes.box}>
     
-    <MyPosts posts={props.posts} addPost={props.addPost} newPostText={props.newPostText} onPostChange={props.onPostChange}/>   
+    <MyPosts posts={props.posts} dispatch={props.dispatch} textFlex={props.textFlex} />   
     
     </div>
   </div>)
