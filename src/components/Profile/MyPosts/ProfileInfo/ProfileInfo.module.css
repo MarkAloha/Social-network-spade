@@ -14,7 +14,13 @@ h5 {
 
   .item {
     color:rgb(0, 0, 0);
-    display: flex;
-    justify-content: center;
-    padding: 10px;
+    display: flex;    
+    padding: 10px;           
   }
+
+  .item>img {
+    width: 100px;  
+    padding: 20px; 
+  }
+
+  

@@ -1,52 +1,49 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
-import Profile from "./components/Profile/Profile";
-import Dialogs from "./components/Dialogs/Dialogs";
+import ProfileContainer from "./components/Profile/ProfileContainer";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import UsersContainer from "./components/Users/UsersContainer";
+import RecipesContainer from "./components/Recipes/RecipesContainer";
+import HeaderContainer from "./components/Header/HeaderContainer";
 // import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 const App = (props) => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
-        <Header />
+        <HeaderContainer />
         <Navbar
-          sidebar={props.state.sidebar}
-          names={props.state.dialogs.names}
+          sidebar={props.state.sidebarReducer.sidebar}
+          names={props.state.dialogsReducer.dialogs.names}
         />
         <div className="app-wrapper-content">
           <Routes>
             <Route
               path="/dialogs/*"
               element={
-                <Dialogs
-                  messages={props.state.dialogs.messages}
-                  names={props.state.dialogs.names}                  
-                  newMessageText={props.state.dialogs.newMessageText}
-                  dispatch={props.dispatch}
+                <DialogsContainer
+                  // store={props.store}
+                  // messages={props.state.dialogsReducer.dialogs.messages}
+                  // names={props.state.dialogsReducer.dialogs.names}
+                  // newMessageText={
+                  //   props.state.dialogsReducer.dialogs.newMessageText
+                  // }
+                  
                 />
               }
             />
-            <Route
-              path="/profile"
-              element={
-                <Profile
-                  posts={props.state.profile.wall}
-                  dispatch={props.dispatch} 
-                  textFlex={props.state.profile.newPostText}                                 
-                />
-              }
-            />
+            <Route path='/profile' element={<ProfileContainer />} />
+            <Route path="/profile/:userId/*" element={<ProfileContainer />} />
             <Route path="/news" element={<News />} />
+            <Route path="/recipes" element={<RecipesContainer />} />
+            <Route path="/users" element={<UsersContainer />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
           </Routes>
-          {/* <Dialogs /> */}
         </div>
       </div>
     </BrowserRouter>

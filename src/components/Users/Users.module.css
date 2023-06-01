@@ -1,0 +1,47 @@
+.box {
+  padding: 10px 0 0 40px;  
+}
+
+.bigBox { 
+  display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-column-gap: px;
+grid-row-gap: 0px;
+    
+}
+
+.ava {
+  max-width: 50px;
+}
+
+a.active {
+  padding: 0px 0px 0px 40px;
+  color: aqua;
+  text-decoration: none;
+}
+.item {
+  padding: 0px 0px 0px 40px;
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  /* max-height: 16px; */
+}
+
+.selectedPage {
+  color: rgb(255, 0, 234);
+  cursor: pointer;
+  margin: 0px 2px 0px 2px;
+}
+
+.page {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  margin: 0px 2px 0px 2px;
+}
+.load {
+  max-width: 20px;
+}
+.top {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}

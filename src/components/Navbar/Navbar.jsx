@@ -6,16 +6,16 @@ const setActive = (navData => navData.isActive ? classes.active : classes.item)
 
 const Navbar = (props) => {
 
-  let navA = props.sidebar.map(n => <NavLink to={n.url} className={setActive}>{n.item}</NavLink >)
+  let navA = props.sidebar.map(n => <NavLink to={n.url} key={n.id} className={setActive}>{n.item}</NavLink >)
 
   return (<nav className={classes.nav}>
 
     <div className={classes.box}>
       {navA}
     </div>
-    <div>   
-    <div className={classes.word}>Friends</div>
-    <FriendsBar names={props.names} />
+    <div>
+      <div className={classes.word}>Friends</div>
+      <FriendsBar names={props.names} />
     </div>
   </nav>
   )

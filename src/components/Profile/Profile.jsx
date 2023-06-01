@@ -1,14 +1,14 @@
-import MyPosts from './MyPosts/MyPosts';
+import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './MyPosts/ProfileInfo/ProfileInfo';
 import classes from './Profile.module.css'
 
 
 const Profile = (props) => {  
   return (<div className={classes.content}>
-    <ProfileInfo />
+    <ProfileInfo profile={props.profile} />
     <div className={classes.box}>
     
-    <MyPosts posts={props.posts} dispatch={props.dispatch} textFlex={props.textFlex} />   
+    <MyPostsContainer  />   
     
     </div>
   </div>)
